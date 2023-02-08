@@ -1,0 +1,242 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    display: grid;
+    grid-template-areas: "header header header header"
+                           "hero hero hero hero"
+                           "about about about about"
+                           "services services services services"
+                           "projects projects projects projects"
+                           "footer footer footer footer";     
+    grid-template-columns: repeat(4, 1fr);   
+    font-size: 1.7rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.header a h1{
+    font-size: 3rem;
+    transition: 0.3s ease-in-out;
+}
+
+.header a h1:hover{
+    color: coral;
+}
+
+.header nav ul{
+    display: flex;
+}
+
+.header nav ul li a{
+    padding: 10px 30px;
+    font-size: 2rem;
+    border-radius: 30px;
+    transition: 0.3s ease-in-out;
+}
+
+.header nav ul li a:hover{
+    color: #fff;
+    background-color: coral;
+}
+
+.hero{
+    grid-area: hero;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    background: url(../images/lemons.jpg) center center no-repeat;
+    background-size: cover;
+    height: 89vh;
+    position: relative;
+}
+
+.hero h2{
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.hero::after{
+    content: url(../images/seta_preta.png);
+    position: absolute;
+    bottom: 30px;
+    animation: arrow infinite alternate 0.5s ease-in-out;
+}
+
+@keyframes arrow{
+    0%{transform: translateY(0);
+    opacity: 0.4;}
+    100%{transform: translateY(1em);
+    opacity: 1;}
+}
+
+@media(max-width: 425px){
+    .hero{
+        height: 70vh;
+    }
+
+    .hero h2{
+        font-size: 3.5rem;
+    }
+}
+
+.about{
+    grid-area: about;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about .info-about{
+    padding: 20%;
+}
+
+.about .info-about h2{
+    font-size: 4rem;
+}
+
+.about .info-about p{
+    font-size: 1.8rem;
+    line-height: 22px;
+    margin: 30px 0;
+}
+
+.about .info-about a{
+    font-size: 1.8rem;
+}
+
+.about .info-about a:hover{
+    font-weight: 600;
+}
+
+.about .image-right{
+    content: "";
+    background: url(../images/bridge.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.about .image-left{
+    content: "";
+    background: url(../images/sky.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+@media(max-width: 425px){
+    .about{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.services{
+    grid-area: services;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.services .service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.services .service img{
+    margin: 20px 0;
+}
+
+.services .service h3{
+    margin: 30px 0;
+}
+
+.services .service p{
+    font-size: 2.3rem;
+    max-width: 400px;
+    text-align: center;
+}
+
+.services .service:nth-child(1){
+    background-color: lightskyblue;
+}
+
+.services .service:nth-child(2){
+    background-color: lightpink;
+}
+
+@media(max-width: 425px){
+    .services{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects .project a:hover{
+    transition: 0.2s ease-in-out;
+    opacity: 0.7;
+}
+
+.projects .project a img{
+    height: 100%;
+}
+
+@media(max-width: 425px){
+    .projects{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+.footer{
+    grid-area: footer;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding: 80px 0;
+}
+
+.footer h3{
+    font-size: 3rem;
+}
+
+.footer ul{
+    display: flex;
+    margin: 60px 0;
+}
+
+.footer ul li a{
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding: 0 30px;
+    transition: 0.2s ease-in-out;
+}
+
+.footer ul li a:hover{
+    color: #fff;
+}
+
+.footer .social i{
+    font-size: 2.4rem;
+    padding: 0 25px;
+    transition: 0.2s ease-in-out;
+}
+
+.footer .social i:hover{
+    color: #fff;
+}
